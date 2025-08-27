@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <label for="product">Produto: </label><br />
+      <select name="product" id="product" required>
+        <option value=""></option>
+        <option value="notebook">Notebook</option>
+        <option value="celular">Celular</option>
+        <option value="teclado">Teclado</option>
+      </select>
+      <br /><br />
+
+      <label for="quantity">Quantidade: </label><br />
+      <input
+        required
+        type="number"
+        name="quantity"
+        id="quantity"
+        min="1"
+        max="10"
+      />
+      <br /><br />
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Cancelar</button>
+    </form>
+  </body>
+</html>
