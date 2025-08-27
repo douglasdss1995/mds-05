@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulário de Pesquisa de Satisfação</h1>
+
+    <form action="" method="post">
+      <label for="nota">Nota</label>
+      <br />
+
+      <label for="n1">1</label>
+      <input required type="radio" name="nota" id="n1" value="1" />
+      <br />
+      <label for="n2">2</label>
+      <input required type="radio" name="nota" id="n2" value="2" />
+      <br />
+      <label for="n3">3</label>
+      <input required type="radio" name="nota" id="n3" value="3" />
+      <br />
+      <label for="n4">4</label>
+      <input required type="radio" name="nota" id="n4" value="4" />
+      <br />
+      <label for="n5">5</label>
+      <input required type="radio" name="nota" id="n5" value="5" />
+
+      <br /><br />
+
+      <label for="nota">Nota</label><br />
+      <select name="nota" id="nota">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <br /><br />
+
+      <label for="nota">Nota</label>
+      <input type="number" name="nota" id="nota" min="1" max="5" />
+      <br /><br />
+
+      <label for="mensagem">Mensagem</label>
+      <textarea
+        required
+        name="mensagem"
+        id="mensagem"
+        cols="30"
+        rows="10"
+      ></textarea>
+
+      <br /><br />
+      <button type="submit">Enviar</button>
+      <button type="reset">Cancelar</button>
+    </form>
+  </body>
+</html>
