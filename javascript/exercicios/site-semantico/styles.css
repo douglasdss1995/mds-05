@@ -1,0 +1,208 @@
+/* Reset e Estilos Base */
+:root {
+    --cor-primaria: #3498db;
+    --cor-secundaria: #2c3e50;
+    --cor-texto: #333;
+    --cor-fundo: #f9f9f9;
+    --cor-borda: #ddd;
+    --espacamento: 1rem;
+    --borda-arredondada: 4px;
+    --largura-menu: 250px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--espacamento);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: var(--espacamento) 0;
+    text-align: center;
+    position: relative;
+}
+
+.cabecalho h1 {
+    margin-bottom: 0.5rem;
+}
+
+/* Botão de Toggle do Menu */
+.menu-toggle {
+    position: absolute;
+    left: var(--espacamento);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none; /* Escondido por padrão em desktop */
+    z-index: 100;
+}
+
+/* Navegação */
+.navbar {
+    background-color: var(--cor-primaria);
+    padding: 0.5rem 0;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0 1rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: var(--borda-arredondada);
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Layout Principal */
+.conteudo-principal {
+    display: flex;
+    flex: 1;
+    margin: var(--espacamento) auto;
+    gap: var(--espacamento);
+    min-height: 0;
+    transition: margin-left 0.3s ease;
+}
+
+/* Menu Lateral */
+.menu-lateral {
+    flex: 0 0 var(--largura-menu);
+    background-color: white;
+    padding: var(--espacamento);
+    border-radius: var(--borda-arredondada);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Conteúdo Principal */
+.conteudo {
+    flex: 1;
+    background-color: white;
+    padding: var(--espacamento);
+    border-radius: var(--borda-arredondada);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.conteudo article {
+    margin-bottom: var(--espacamento);
+}
+
+.conteudo h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 1rem;
+}
+
+.conteudo section {
+    margin-bottom: 1.5rem;
+}
+
+.conteudo h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: var(--espacamento) 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.rodape a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+/* Estado quando o menu está escondido */
+.menu-escondido .menu-lateral {
+    transform: translateX(-100%);
+    opacity: 0;
+    position: absolute;
+    width: var(--largura-menu);
+    height: calc(100vh - 150px);
+    z-index: 99;
+    background-color: white;
+}
+
+.menu-escondido .conteudo {
+    margin-left: calc(-1 * var(--largura-menu));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Mostra o botão em mobile */
+    }
+
+    .menu-lateral {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 90;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .menu-lateral.visivel {
+        transform: translateX(0);
+    }
+
+    .conteudo-principal {
+        margin-left: 0;
+        transition: margin-left 0.3s ease;
+    }
+
+    .conteudo {
+        margin-left: 0;
+        width: 100%;
+    }
+}
