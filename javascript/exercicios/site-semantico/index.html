@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Página Semântica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Cabeçalho com botão de menu -->
+  <header class="cabecalho">
+    <div class="container">
+      <button id="menuToggle" class="menu-toggle fas fa-bars" aria-label="Alternar menu"></button>
+      <div class="titulo">
+        <h1>Meu Site Semântico</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de Navegação -->
+  <nav class="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Conteúdo Principal -->
+  <div class="conteudo-principal container">
+    <!-- Menu Lateral -->
+    <aside class="menu-lateral" id="menuLateral">
+      <h2>Menu</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+          <li><a href="#">Link 5</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo -->
+    <main class="conteudo">
+      <article>
+        <h2>Título do Artigo</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl
+          nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+
+        <section>
+          <h3>Seção 1</h3>
+          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque,
+            auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>
+        </section>
+
+        <section>
+          <h3>Seção 2</h3>
+          <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus
+            convallis quis ac lectus.</p>
+        </section>
+      </article>
+    </main>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="container">
+      <p>&copy; 2023 Meu Site Semântico. Todos os direitos reservados.</p>
+      <address>
+        Contato: <a href="mailto:contato@meusite.com">contato@meusite.com</a>
+      </address>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

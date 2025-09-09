@@ -1,0 +1,22 @@
+body {
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 700px;
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.1);
+}
+
+h2 {
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 20px;
+}
+
+#logoutBtn {
+    cursor: pointer;
+}
