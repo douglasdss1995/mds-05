@@ -1,9 +1,7 @@
 // Formas de declarar variáveis
-var x = 10;
-
-let x = 20;
-
-const x = 30;
+var vVar = 10;
+let vLet = 20;
+const vConst = 30;
 
 // String
 var nome = "Douglas";
