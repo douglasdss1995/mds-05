@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form" class="form">
+  <input formControlName="nome" placeholder="Nome"/>
+  <input formControlName="email" placeholder="Email"/>
+  <input formControlName="senha" placeholder="Senha" type="password"/>
+
+  <label for="status">Status</label>
+  <select formControlName="status" id="status" name="status">
+    <option value="1">Ativo</option>
+    <option value="0">Inativo</option>
+  </select>
+
+  <button (click)="onSubmit()" [disabled]="form.invalid" type="submit">Enviar</button>
+</form>
