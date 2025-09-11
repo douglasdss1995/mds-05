@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-interpolation',
   imports: [],
+  standalone: true,
   templateUrl: './interpolation.component.html',
-  styleUrl: './interpolation.component.scss'
+  styleUrl: './interpolation.component.css'
 })
 export class InterpolationComponent {
 
-  title = "Olá Mundo";
+  ola: string = "Olá alunos!";
 
 }

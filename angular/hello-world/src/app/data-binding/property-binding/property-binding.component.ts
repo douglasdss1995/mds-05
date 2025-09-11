@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-property-binding',
   imports: [],
   templateUrl: './property-binding.component.html',
-  styleUrl: './property-binding.component.scss'
+  styleUrl: './property-binding.component.css'
 })
 export class PropertyBindingComponent {
 
-  isDisable = false;
+  isDisabled: boolean = true;
 
 }
