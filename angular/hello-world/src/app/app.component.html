@@ -1,19 +1,44 @@
-<dl>
-  <dt routerLink="">Home</dt>
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer #drawer mode="over">
 
-  <dt>Data binding</dt>
-  <dd routerLink="interpolation">Interpolation</dd>
-  <dd routerLink="property-binding">Property Binding</dd>
-  <dd routerLink="event-binding">Event binding</dd>
-  <dd routerLink="two-way-data-binding">Two way data binding</dd>
+    <dl>
+      <dt routerLink="">Home</dt>
 
-  <dt>Forms</dt>
-  <dd routerLink="template-driven">Template Driven</dd>
+      <dt>Data binding</dt>
+      <dd routerLink="interpolation">Interpolation</dd>
+      <dd routerLink="property-binding">Property Binding</dd>
+      <dd routerLink="event-binding">Event binding</dd>
+      <dd routerLink="two-way-data-binding">Two way data binding</dd>
 
-  <dt>Angular</dt>
-  <dd routerLink="button">Button</dd>
-  <dd routerLink="form-field">Form Field</dd>
+      <dt>Forms</dt>
+      <dd routerLink="template-driven">Template Driven</dd>
 
-</dl>
+      <dt>Angular</dt>
+      <dd routerLink="button">Button</dd>
+      <dd routerLink="form-field">Form Field</dd>
+      <dd routerLink="expansion-panel">Expansion panel</dd>
 
-<router-outlet></router-outlet>
+    </dl>
+
+  </mat-drawer>
+  <mat-drawer-content>
+
+    <mat-toolbar>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
