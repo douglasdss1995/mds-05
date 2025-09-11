@@ -1,13 +1,14 @@
 import {Component} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import {ButtonComponent} from './angular-material/button/button.component';
 
 @Component({
   selector: 'app-root',
   imports: [
-    RouterModule,
+    ButtonComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  standalone: true,
 })
 export class AppComponent {
   title = 'hello-world';
