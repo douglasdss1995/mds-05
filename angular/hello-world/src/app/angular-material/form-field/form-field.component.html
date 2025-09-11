@@ -1,0 +1,18 @@
+<mat-form-field>
+  <mat-label>Input</mat-label>
+  <input [(ngModel)]="nome" matInput>
+</mat-form-field>
+
+{{ nome }}
+
+<mat-form-field>
+  <mat-label>Select</mat-label>
+  <mat-select>
+    <mat-option value="one">First option</mat-option>
+    <mat-option value="two">Second option</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Textarea</mat-label>
+  <textarea (click)="alertar()" matInput></textarea>
+</mat-form-field>

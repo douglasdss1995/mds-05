@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {ButtonComponent} from './angular-material/button/button.component';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   imports: [
-    ButtonComponent
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
