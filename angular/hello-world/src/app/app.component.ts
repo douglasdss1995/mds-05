@@ -40,7 +40,7 @@ export class AppComponent {
     'Tarefa 2',
   ];
 
-  public addTarefa(){
+  public addTarefa() {
     this.listaDeTarefas.push(this.tarefa);
     this.tarefa = '';
   }

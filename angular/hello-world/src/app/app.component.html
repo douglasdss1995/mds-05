@@ -48,10 +48,12 @@
                  matInput placeholder="Ex. Pizza" value="Sushi">
         </mat-form-field>
 
-        <button (click)="addTarefa()" mat-fab extended>
-          <mat-icon>favorite</mat-icon>
-          Basic
-        </button>
+        @if (tarefa) {
+          <button (click)="addTarefa()" mat-fab extended>
+            <mat-icon>favorite</mat-icon>
+            Basic
+          </button>
+        }
       </div>
 
       <mat-list role="list">
