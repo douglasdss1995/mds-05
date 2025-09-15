@@ -24,7 +24,8 @@
   <mat-drawer-content>
 
     <mat-toolbar>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <button (click)="drawer.toggle()" mat-icon-button class="example-icon"
+              aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
       <span>My App</span>
@@ -37,7 +38,31 @@
       </button>
     </mat-toolbar>
 
-    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    <div
+      class="d-flex flex-column justify-content-center align-items-center">
+      <div class="d-flex gap-2">
+        <mat-form-field class="example-full-width">
+          <mat-label>Favorite food</mat-label>
+          <input (keydown.enter)="addTarefa()"
+                 [(ngModel)]="tarefa"
+                 matInput placeholder="Ex. Pizza" value="Sushi">
+        </mat-form-field>
+
+        @if (tarefa) {
+          <button (click)="addTarefa()" mat-fab extended>
+            <mat-icon>favorite</mat-icon>
+            Basic
+          </button>
+        }
+      </div>
+
+      <mat-list role="list">
+        @for (item of listaDeTarefas; track item) {
+          <mat-list-item role="listitem">{{ item }}</mat-list-item>
+          <mat-divider></mat-divider>
+        }
+      </mat-list>
+    </div>
 
     <router-outlet></router-outlet>
   </mat-drawer-content>
