@@ -17,6 +17,7 @@
       <dd routerLink="button">Button</dd>
       <dd routerLink="form-field">Form Field</dd>
       <dd routerLink="expansion-panel">Expansion panel</dd>
+      <dd routerLink="todo-list">Todo List</dd>
 
     </dl>
 
@@ -37,32 +38,6 @@
         <mat-icon>share</mat-icon>
       </button>
     </mat-toolbar>
-
-    <div
-      class="d-flex flex-column justify-content-center align-items-center">
-      <div class="d-flex gap-2">
-        <mat-form-field class="example-full-width">
-          <mat-label>Favorite food</mat-label>
-          <input (keydown.enter)="addTarefa()"
-                 [(ngModel)]="tarefa"
-                 matInput placeholder="Ex. Pizza" value="Sushi">
-        </mat-form-field>
-
-        @if (tarefa) {
-          <button (click)="addTarefa()" mat-fab extended>
-            <mat-icon>favorite</mat-icon>
-            Basic
-          </button>
-        }
-      </div>
-
-      <mat-list role="list">
-        @for (item of listaDeTarefas; track item) {
-          <mat-list-item role="listitem">{{ item }}</mat-list-item>
-          <mat-divider></mat-divider>
-        }
-      </mat-list>
-    </div>
 
     <router-outlet></router-outlet>
   </mat-drawer-content>

@@ -19,7 +19,7 @@ export class TaskService {
    * Retrieves all tasks from the API
    * @returns An Observable that emits an array of TaskModel objects
    */
-  getTasks(): Observable<TaskModel[]> {
+  public getTasks(): Observable<TaskModel[]> {
     return this.http.get<Array<TaskModel>>(`${this.apiUrl}/`);
   }
 
