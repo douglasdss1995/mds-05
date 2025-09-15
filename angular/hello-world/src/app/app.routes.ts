@@ -8,6 +8,7 @@ import {TemplateDrivenComponent} from './forms/template-driven/template-driven.c
 import {ButtonComponent} from './angular-material/button/button.component';
 import {FormFieldComponent} from './angular-material/form-field/form-field.component';
 import {ExpansionPanelComponent} from './angular-material/expansion-panel/expansion-panel.component';
+import {TodoListComponent} from './todo-list/todo-list.component';
 
 export const routes: Routes = [
   {path: "home", component: HelloWorldComponent},
@@ -19,4 +20,5 @@ export const routes: Routes = [
   {path: "button", component: ButtonComponent},
   {path: "form-field", component: FormFieldComponent},
   {path: "expansion-panel", component: ExpansionPanelComponent},
+  {path: "todo-list", component: TodoListComponent},
 ];
