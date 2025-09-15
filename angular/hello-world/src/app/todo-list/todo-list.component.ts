@@ -9,7 +9,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {RouterModule} from '@angular/router';
 import {TaskModel} from '../models/task-model';
 import {TaskService} from '../services/task.service';
-import {JsonPipe} from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
@@ -21,8 +20,7 @@ import {JsonPipe} from '@angular/common';
     MatListModule,
     MatInputModule,
     MatDividerModule,
-    FormsModule,
-    JsonPipe
+    FormsModule
   ],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
@@ -50,8 +48,16 @@ export class TodoListComponent implements OnInit {
 
   //
   public addTarefa() {
-    // this.listaDeTarefas.push(this.tarefa);
-    // this.tarefa = '';
+    const tarefa: TaskModel = {
+      nome: this.tarefa,
+      descricao: '',
+      concluida: true,
+    };
+
+    this.taskService.createTask(tarefa).subscribe(() => {
+      this.getTarefas();
+      this.tarefa = '';
+    });
   }
 
 }

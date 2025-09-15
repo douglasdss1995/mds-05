@@ -22,40 +22,40 @@ export class TaskService {
   public getTasks(): Observable<TaskModel[]> {
     return this.http.get<Array<TaskModel>>(`${this.apiUrl}/`);
   }
-  //
-  // /**
-  //  * Retrieves a task by its ID from the API
-  //  * @param id - The unique identifier of the task to retrieve
-  //  * @returns An Observable that emits the TaskModel object if found
-  //  */
-  // public getTaskById(id: number): Observable<TaskModel> {
-  //   return this.http.get<TaskModel>(`${this.apiUrl}/${id}`);
-  // }
-  //
-  // /**
-  //  * Updates an existing task partially in the API
-  //  * @param task - The task object containing the updates
-  //  * @returns An Observable that emits the updated TaskModel
-  //  */
-  // public patchTask(task: TaskModel): Observable<TaskModel> {
-  //   return this.http.patch<TaskModel>(`${this.apiUrl}/${task.id}/`, task);
-  // }
-  //
-  // /**
-  //  * Deletes a task from the API
-  //  * @param id - The unique identifier of the task to delete
-  //  * @returns An Observable that completes when the task is deleted
-  //  */
-  // public deleteTask(id: number): Observable<any> {
-  //   return this.http.delete(`${this.apiUrl}/${id}/`);
-  // }
-  //
-  // /**
-  //  * Creates a new task in the API
-  //  * @param task - The task object to create
-  //  * @returns An Observable that emits the created TaskModel
-  //  */
-  // public createTask(task: TaskModel): Observable<TaskModel> {
-  //   return this.http.post<TaskModel>(`${this.apiUrl}/`, task);
-  // }
+
+  /**
+   * Retrieves a task by its ID from the API
+   * @param id - The unique identifier of the task to retrieve
+   * @returns An Observable that emits the TaskModel object if found
+   */
+  public getTaskById(id: number): Observable<TaskModel> {
+    return this.http.get<TaskModel>(`${this.apiUrl}/${id}`);
+  }
+
+  /**
+   * Updates an existing task partially in the API
+   * @param task - The task object containing the updates
+   * @returns An Observable that emits the updated TaskModel
+   */
+  public patchTask(task: TaskModel): Observable<TaskModel> {
+    return this.http.patch<TaskModel>(`${this.apiUrl}/${task.id}/`, task);
+  }
+
+  /**
+   * Deletes a task from the API
+   * @param id - The unique identifier of the task to delete
+   * @returns An Observable that completes when the task is deleted
+   */
+  public deleteTask(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}/`);
+  }
+
+  /**
+   * Creates a new task in the API
+   * @param task - The task object to create
+   * @returns An Observable that emits the created TaskModel
+   */
+  public createTask(task: TaskModel): Observable<TaskModel> {
+    return this.http.post<TaskModel>(`${this.apiUrl}/`, task);
+  }
 }
