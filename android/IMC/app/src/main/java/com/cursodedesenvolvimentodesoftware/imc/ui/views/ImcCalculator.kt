@@ -28,6 +28,37 @@ import com.cursodedesenvolvimentodesoftware.imc.ui.theme.IMCTheme
 fun ImcCalculator(
     modifier: Modifier = Modifier
 ) {
+
+    /**
+     * Calcula o Índice de Massa Corporal (IMC).
+     *
+     * @param peso O peso da pessoa em quilogramas (kg).
+     * @param alturaCm A altura da pessoa em centímetros (cm).
+     * @return O valor do IMC calculado.
+     */
+    fun calcularIMC(
+        peso: Double,
+        alturaCm: Double
+    ): Double {
+        val alturaM = alturaCm / 100 // Converte altura de cm para metros.
+        return peso / (alturaM * alturaM) // Fórmula do IMC: peso / (altura_em_metros)^2.
+    }
+
+    /**
+     * Classifica o IMC de acordo com as faixas padrão.
+     *
+     * @param imc O valor do IMC a ser classificado.
+     * @return Uma string descrevendo a classificação do IMC (e.g., "Peso normal", "Sobrepeso").
+     */
+    fun classificarIMC(imc: Double): String {
+        return when {
+            imc < 18.5 -> "Abaixo do peso"
+            imc < 24.9 -> "Peso normal"
+            imc < 29.9 -> "Sobrepeso"
+            else -> "Obesidade"
+        }
+    }
+
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -85,7 +116,24 @@ fun ImcCalculator(
         Spacer(modifier = Modifier.height(10.dp))
 
         Button(
-            onClick = {},
+            onClick = {
+                val peso = pesoInput.toDoubleOrNull()
+                val altura = alturaInput.toDoubleOrNull()
+
+                // Verifica se os valores de peso e altura são válidos.
+                if (peso != null && altura != null && peso > 0 && altura > 0) {
+                    val imc = calcularIMC(
+                        peso,
+                        altura
+                    )
+                    imcResult = imc // Armazena o resultado do IMC.
+                    resultadoTexto = classificarIMC(imc) // Armazena a classificação do IMC.
+                } else {
+                    imcResult = null // Reseta o resultado do IMC.
+                    // Define mensagem de erro.
+                    resultadoTexto = "Por favor, insira valores válidos."
+                }
+            },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(text = "Calcular")
@@ -93,9 +141,7 @@ fun ImcCalculator(
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        Text(
-            text = imcResult.toString()
-        )
+        Text(text = resultadoTexto)
 
     }
 }
