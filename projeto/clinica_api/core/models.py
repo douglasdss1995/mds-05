@@ -9,6 +9,7 @@ class ModeloBase(models.Model):
     class Meta:
         abstract = True
 
+
 class Especialidade(ModeloBase):
     nome = models.TextField(null=False, blank=False)
 
@@ -43,4 +44,8 @@ class MedicoEspecialidade(ModeloBase):
         on_delete=models.DO_NOTHING,
         null=False,
         blank=False
+    )
+    tipo = models.DateTimeField(
+        null=False,
+        blank=False,
     )
