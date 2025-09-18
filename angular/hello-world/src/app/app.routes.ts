@@ -19,6 +19,5 @@ export const routes: Routes = [
   {path: "template-driven", component: TemplateDrivenComponent},
   {path: "button", component: ButtonComponent},
   {path: "form-field", component: FormFieldComponent},
-  {path: "expansion-panel", component: ExpansionPanelComponent},
   {path: "todo-list", component: TodoListComponent},
 ];
